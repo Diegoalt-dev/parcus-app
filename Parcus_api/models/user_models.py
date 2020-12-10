@@ -6,6 +6,6 @@ class UserIn(BaseModel):
 
 class UserOut(BaseModel):
     nombre: str
-    ctaBancaria: str
-    tarjCredito: str
-    efectivo: int  
+    ctaBancaria: tuple[str,int]
+    tarjCredito: tuple[str,int]
+    efectivo: int
