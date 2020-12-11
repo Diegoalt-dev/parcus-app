@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Tuple
 
 class UserIn(BaseModel):
     id_usuario: int
@@ -6,6 +7,13 @@ class UserIn(BaseModel):
 
 class UserOut(BaseModel):
     nombre: str
-    ctaBancaria: tuple[str,int]
-    tarjCredito: tuple[str,int]
+    ctaBancaria: Tuple[str,int]
+    tarjCredito: Tuple[str,int]
     efectivo: int
+
+class UserAct(BaseModel):
+    id_usuario: int 
+    nombre: str = None
+    ctaBancaria: Tuple[str,int] = None
+    tarjCredito: Tuple[str,int] = None
+    
