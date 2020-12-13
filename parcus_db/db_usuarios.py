@@ -13,7 +13,7 @@ database_users = Dict[int, UsuariosDB]
 
 database_users = {
     12345678: UsuariosDB(**{ "id_usuario":12345678,
-                                "nombre":"NOMBRE2",
+                                "nombre":"Petronilos",
                                 "ctaBancaria":["Davivienda123",2000000],
                                 "tarjCredito":["Visa123",1500000],
                                 "efectivo":120000}),
