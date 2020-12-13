@@ -21,7 +21,7 @@ async def get_data(id_usuario: int):
 
 
 
-@api.put("/user/actualiza/")
+@api.post("/user/actualiza/")
 async def actualiza_data(user_act: UserAct):
 
     user_in_db = get_usuario(user_act.id_usuario)
