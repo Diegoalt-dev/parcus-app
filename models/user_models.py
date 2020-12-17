@@ -16,4 +16,4 @@ class UserAct(BaseModel):
     nombre: str = None
     ctaBancaria: Tuple[str,int] = None
     tarjCredito: Tuple[str,int] = None
-    
+    efectivo: int = None
