@@ -10,7 +10,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 origins = [
 "http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
-"http://localhost", "http://localhost:8080",
+"http://localhost", "http://localhost:8080", "https://parcus-app.herokuapp.com", 
+"http://parcus-app.herokuapp.com",
 ]
 
 
@@ -21,6 +22,18 @@ api.add_middleware(
 CORSMiddleware, allow_origins=origins,
 allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
 )
+
+
+@api.post("/user/auth/")
+async def auth_user(user_in: UserIn):
+    user_in_db = get_usuario(user_in.id_usuario)
+    if user_in_db == None:
+        raise HTTPException(status_code=404,
+        detail="El usuario no existe")
+    if user_in_db.password != user_in_db.password:
+        raise HTTPException(status_code=403,
+        detail="Error de autenticacion")
+    return {"Autenticado": True}
 
 
 @api.get("/user/data/{id_usuario}") ## El get se envía a través de la URL

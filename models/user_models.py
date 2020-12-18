@@ -3,7 +3,7 @@ from typing import Tuple
 
 class UserIn(BaseModel):
     id_usuario: int
-    nombre: str
+    password: str
 
 class UserOut(BaseModel):
     nombre: str
