@@ -4,7 +4,7 @@ from typing import Tuple, List
 
 class TransactionIn(BaseModel):
     id_usuario: int
-    concepto: str
+    concepto: str = None
     descripcion: str = None
     valor: float
     recurrencia: int = None
